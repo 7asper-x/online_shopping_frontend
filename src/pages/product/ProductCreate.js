@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from "react";
-import {Link} from "react-router-dom";
+import React, {useState} from "react";
 import AdminNav from "../../components/nav/AdminNav";
 import {toast} from "react-toastify";
 import {useSelector} from "react-redux";
@@ -34,7 +33,7 @@ function ProductCreate() {
                 toast.success(`${res.data.title} created`);
                 setValues(initialState);
             }).catch(err => {
-                if (err.response.status === 400) toast.error(err.response.data);
+                toast.error(err.response.data);
             }
         );
     }
